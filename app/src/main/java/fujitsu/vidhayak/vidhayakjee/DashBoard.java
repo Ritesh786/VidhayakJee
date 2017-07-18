@@ -1,5 +1,6 @@
 package fujitsu.vidhayak.vidhayakjee;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 
+import fujitsu.vidhayak.vidhayakjee.CamearPackage.UplaodRequest;
 import fujitsu.vidhayak.vidhayakjee.Fragments.PendingRequest;
 import fujitsu.vidhayak.vidhayakjee.Fragments.PendingStory;
 import fujitsu.vidhayak.vidhayakjee.Fragments.YourFragments;
@@ -140,7 +142,8 @@ public class DashBoard extends AppCompatActivity
 
         } else if (id == R.id.nav_uploadrequest) {
 
-
+                 Intent requstintent = new Intent(DashBoard.this, UplaodRequest.class);
+                 startActivity(requstintent);
 
 
         } else if (id == R.id.nav_uploadstory) {

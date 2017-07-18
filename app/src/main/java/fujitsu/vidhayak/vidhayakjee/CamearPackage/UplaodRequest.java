@@ -52,7 +52,7 @@ public class UplaodRequest extends AppCompatActivity implements View.OnClickList
 
     public static final String KEY_ID= "user_id";
     public static final String KEY_TITLE = "title";
-    public static final String KEY_DESCRIPTION = "description";
+    public static final String KEY_DESCRIPTION = "content";
     public static final String KEY_IMAGE = "image";
 
 
@@ -156,7 +156,7 @@ public class UplaodRequest extends AppCompatActivity implements View.OnClickList
 
 
             String url = null;
-            String REGISTER_URL = "http://minews.in/storage/app/public/uploadNews.php";
+            String REGISTER_URL = "http://vidhayak.ap-south-1.elasticbeanstalk.com/slimapp/public/api/post/create";
 
             REGISTER_URL = REGISTER_URL.replaceAll(" ", "%20");
             try {
