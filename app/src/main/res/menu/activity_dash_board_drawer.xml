@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_uploadrequest"
+            android:title="Upload Request" />
+        <item
+            android:id="@+id/nav_uploadstory"
+            android:title="Upload Story" />
+        <item
+            android:id="@+id/nav_completedrequest"
+            android:title="Completed Request" />
+        <item
+            android:id="@+id/nav_pendingrequest"
+            android:title="Pending Request" />
+        <item
+            android:id="@+id/nav_completedstory"
+            android:title="Completed Story" />
+        <item
+            android:id="@+id/nav_pendingstory"
+            android:title="Pending Story" />
+
+    </group>
+
+
+
+</menu>

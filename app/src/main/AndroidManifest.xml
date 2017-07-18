@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="fujitsu.vidhayak.vidhayakjee">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_vidhayakicon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AppIntro.DefaultIntro"
+            android:label="Intro Label"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".RegisterClass"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".DashBoard"
+            android:label="@string/title_activity_dash_board"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Verifyotp"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity android:name=".CamearPackage.UplaodRequest" />
+
+        <activity android:name=".CamearPackage.UploadStory"></activity>
+
+        <activity android:name=".CamearPackage.CropImage"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+    </application>
+
+</manifest>
