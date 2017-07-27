@@ -10,21 +10,33 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
         android:orientation="vertical"
         android:background="#ffffff"
         tools:context="com.extralarge.fujitsu.xl.ReporterSection.DashboardFragment">
 
 
-        <!--<Spinner-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:entries="@array/newstype_arrays"-->
-        <!--android:layout_marginTop="20dp"-->
-        <!--android:id="@+id/news_type"-->
-        <!--&gt;-->
-        <!--</Spinner>-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary">
+            <ImageView
+                android:id="@+id/back_image"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"/>
+            <TextView
+                android:id="@+id/excellogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="25dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@android:color/white"
+                android:text="Upload Request"
+                />
 
+        </RelativeLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"

@@ -19,6 +19,7 @@ import android.widget.Toast;
 import java.util.HashMap;
 
 import fujitsu.vidhayak.vidhayakjee.CamearPackage.UplaodRequest;
+import fujitsu.vidhayak.vidhayakjee.CamearPackage.UploadStory;
 import fujitsu.vidhayak.vidhayakjee.Fragments.PendingRequest;
 import fujitsu.vidhayak.vidhayakjee.Fragments.PendingStory;
 import fujitsu.vidhayak.vidhayakjee.Fragments.YourFragments;
@@ -81,7 +82,7 @@ public class DashBoard extends AppCompatActivity
         tabdesign tabfrag = new tabdesign();
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
-        mFragmentTransaction.replace(R.id.frame_trans, tabfrag).addToBackStack("Reporter Dashboard").commit();
+        mFragmentTransaction.replace(R.id.frame_trans, tabfrag).addToBackStack("Dashboard").commit();
         mFragmentManager.addOnBackStackChangedListener(this);
 
 
@@ -137,7 +138,7 @@ public class DashBoard extends AppCompatActivity
             tabdesign tabfrag = new tabdesign();
             mFragmentManager = getSupportFragmentManager();
             mFragmentTransaction = mFragmentManager.beginTransaction();
-            mFragmentTransaction.replace(R.id.frame_trans, tabfrag).addToBackStack("Reporter Dashboard").commit();
+            mFragmentTransaction.replace(R.id.frame_trans, tabfrag).addToBackStack("Dashboard").commit();
             mFragmentManager.addOnBackStackChangedListener(this);
 
         } else if (id == R.id.nav_uploadrequest) {
@@ -148,7 +149,8 @@ public class DashBoard extends AppCompatActivity
 
         } else if (id == R.id.nav_uploadstory) {
 
-
+            Intent requstintent = new Intent(DashBoard.this, UploadStory.class);
+            startActivity(requstintent);
 
         } else if (id == R.id.nav_completedrequest) {
 
@@ -199,7 +201,9 @@ public class DashBoard extends AppCompatActivity
             setTitle(lastBackStackEntry.getName());
 
         } catch (Exception e) {
-            e.printStackTrace();
+
+            DashBoard.this.finish();
+
         }
 
     }

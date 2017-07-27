@@ -35,7 +35,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import fujitsu.vidhayak.vidhayakjee.R;
-import fujitsu.vidhayak.vidhayakjee.tokensave;
+import fujitsu.vidhayak.vidhayakjee.SaveUserId;
+import fujitsu.vidhayak.vidhayakjee.Urls;
 
 public class UplaodRequest extends AppCompatActivity implements View.OnClickListener {
 
@@ -149,14 +150,14 @@ public class UplaodRequest extends AppCompatActivity implements View.OnClickList
     public void uploadImage() {
 
 
-            final String userid = String.valueOf(tokensave.getInstance(UplaodRequest.this).getUserId());
+            final String userid = String.valueOf(SaveUserId.getInstance(UplaodRequest.this).getUserId());
             final String title = mrequesttitle.getText().toString().trim();
             final String description = mrequestdewscrition.getText().toString().trim();
             final String image = getStringImage(bitmap);
 
 
             String url = null;
-            String REGISTER_URL = "http://vidhayak.ap-south-1.elasticbeanstalk.com/slimapp/public/api/post/create";
+            String REGISTER_URL = Urls.uploadrequest;
 
             REGISTER_URL = REGISTER_URL.replaceAll(" ", "%20");
             try {

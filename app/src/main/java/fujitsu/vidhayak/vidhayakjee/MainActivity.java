@@ -72,7 +72,10 @@ public class MainActivity extends AbsRuntimePermission implements View.OnClickLi
         mloginbtn.setOnClickListener(this);
 
         requestAppPermissions(new String[]{
-                        Manifest.permission.READ_SMS},
+                        Manifest.permission.READ_SMS,
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE},
                 R.string.msg, REQUEST_PERMISSION);
 
     }
@@ -110,7 +113,7 @@ public class MainActivity extends AbsRuntimePermission implements View.OnClickLi
         final String KEY_token = "token";
 
         sendotptxt = mnumbertxt.getText().toString().trim();
-        //final String token = tokensave.getInstance(this).getDeviceToken();
+        //final String token = SaveUserId.getInstance(this).getDeviceToken();
 
         if (TextUtils.isEmpty(sendotptxt)) {
             mnumbertxt.requestFocus();
@@ -120,7 +123,7 @@ public class MainActivity extends AbsRuntimePermission implements View.OnClickLi
 
             String url = null;
 
-            String REGISTER_URL = "http://vidhayak.ap-south-1.elasticbeanstalk.com/request_sms.php";
+            String REGISTER_URL = Urls.login;
 
             REGISTER_URL = REGISTER_URL.replaceAll(" ", "%20");
             try {

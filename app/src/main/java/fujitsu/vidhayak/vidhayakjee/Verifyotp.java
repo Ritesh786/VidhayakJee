@@ -4,14 +4,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.telephony.SmsMessage;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -37,6 +34,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import cn.iwgang.countdownview.CountdownView;
+import fujitsu.vidhayak.vidhayakjee.FCM.tokensave;
 
 public class Verifyotp extends AppCompatActivity implements View.OnClickListener {
 
@@ -94,7 +92,7 @@ public class Verifyotp extends AppCompatActivity implements View.OnClickListener
         try
         {
             // String code = parseCode(message);
-            mverifyotptext.setText(message.substring(47));
+            mverifyotptext.setText(message.substring(46));
         }
         catch (Exception e)
         {
@@ -163,7 +161,7 @@ public class Verifyotp extends AppCompatActivity implements View.OnClickListener
     private void verifyotp(){
 
 
-        final String macid = "abcd";
+        final String macid = tokensave.getInstance(Verifyotp.this).getDeviceToken();
         Log.d("mc00","macid11"+macid);
         final String KEY_mobile = "otp";
         final String KEY_mac = "token";
@@ -177,7 +175,7 @@ public class Verifyotp extends AppCompatActivity implements View.OnClickListener
         else{
 
             String url = null;
-            String REGISTER_URL = "http://vidhayak.ap-south-1.elasticbeanstalk.com/verify_otp.php";
+            String REGISTER_URL = Urls.verifyotp;
 
             REGISTER_URL = REGISTER_URL.replaceAll(" ", "%20");
             try {
@@ -199,9 +197,9 @@ public class Verifyotp extends AppCompatActivity implements View.OnClickListener
                                 if (success) {
 
                                     String name = jsonresponse.getString("name");
-                                    int id = jsonresponse.getInt("id");
+                                    String id = jsonresponse.getString("id");
 
-                                    tokensave.getInstance(getApplicationContext()).saveuserId(id);
+                                    SaveUserId.getInstance(getApplicationContext()).saveuserId(id);
 
                                     session.createUserLoginSession(name);
 

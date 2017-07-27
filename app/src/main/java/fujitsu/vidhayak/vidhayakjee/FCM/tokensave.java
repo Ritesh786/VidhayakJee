@@ -1,4 +1,4 @@
-package fujitsu.vidhayak.vidhayakjee;
+package fujitsu.vidhayak.vidhayakjee.FCM;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -26,18 +26,18 @@ public class tokensave {
     }
 
     //this method will save the device token to shared preferences
-    public boolean saveuserId(int id){
+    public boolean saveDeviceToken(String token){
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(TAG_TOKEN, id);
+        editor.putString(TAG_TOKEN, token);
         editor.apply();
         return true;
     }
 
     //this method will fetch the device token from shared preferences
-    public int getUserId(){
+    public String getDeviceToken(){
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return  sharedPreferences.getInt(TAG_TOKEN, 0);
+        return  sharedPreferences.getString(TAG_TOKEN, "");
     }
 
 }

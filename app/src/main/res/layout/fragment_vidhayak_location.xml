@@ -1,13 +1,62 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+android:background="#ffffff"
     tools:context="fujitsu.vidhayak.vidhayakjee.Fragments.VidhayakLocation">
 
     <!-- TODO: Update blank fragment layout -->
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="280dp"
+       android:id="@+id/openmap_btn"
+       android:background="@drawable/mapbtn"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       android:layout_marginTop="10dp"
+       android:textColor="@color/colorAccent"
+       android:textSize="25dp"
+      />
+
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Last Location Updated"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+       />
 
-</FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addresstxt"
+        android:textSize="15dp"
+        android:text="Last Location Updated"
+        android:textColor="@color/colorAccent"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Last Time Updated"
+        android:layout_marginTop="20dp"
+       android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+       />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/timetxt"
+        android:textSize="15dp"
+        android:text="svsd"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorAccent"
+        />
+
+</LinearLayout>

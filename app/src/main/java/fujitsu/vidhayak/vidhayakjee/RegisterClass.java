@@ -174,7 +174,7 @@ public class RegisterClass extends AppCompatActivity implements View.OnClickList
 
         else {
             String url = null;
-            String REGISTER_URL = "http://vidhayak.ap-south-1.elasticbeanstalk.com/user_reg.php";
+            String REGISTER_URL = Urls.register;
 
             REGISTER_URL = REGISTER_URL.replaceAll(" ", "%20");
             try {
